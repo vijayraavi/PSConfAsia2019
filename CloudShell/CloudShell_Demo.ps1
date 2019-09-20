@@ -60,9 +60,14 @@ $psversiontable
 # Managing a VM with PowerShell direct
 get-command -module PSCloudShellUtility
 
-Enable-AzVMPSRemoting -Name demo_vm -ResourceGroupName PSConfAsia2019-rg -OsType Windows -Protocol HTTPS
+$cred = Get-Credential
 
-Invoke-AzVMCommand
+Invoke-AzVMCommand -Name psconfwin -ResourceGroupName PSConfAsia -scriptblock {gcim win32_operatingsystem | fl *} -Credential $cred
+
+Enable-AzVMPSRemoting -Name PSConfwin -ResourceGroupName PSConfAsia -OsType Windows -Protocol HTTPS
+
+Enable-AzVMPSRemoting -Name PSConflinux -ResourceGroupName PSConfAsia -OsType Linux -Protocol SSH
+
 
 Enter-AzVM
 
@@ -76,5 +81,10 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-pow
 https://docs.microsoft.com/en-us/learn/modules/deploy-vms-from-vhd-templates/4-exercise-create-image-provision-vm?pivots=windows-cloud
 
 #Publish a port
+
+
+# Jaap's script - @Jaap_Brasser
+
+#https://github.com/jaapbrasser/SharedScripts/tree/master/Write-Emoticon
 
 
