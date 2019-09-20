@@ -75,3 +75,6 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-pow
 #Microsoft Learn Sandbox
 https://docs.microsoft.com/en-us/learn/modules/deploy-vms-from-vhd-templates/4-exercise-create-image-provision-vm?pivots=windows-cloud
 
+#Publish a port
+
+
