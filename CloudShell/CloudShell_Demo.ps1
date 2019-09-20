@@ -6,8 +6,6 @@ Find-Module #Install modules from the Gallery
 $PSVersionTable
 
 
-
-
 #Azure Drive based on Ships provider
 cd './Visual Studio Ultimate with MSDN/'
 cd cd ./ResourceGroups/
@@ -81,7 +79,9 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-pow
 https://docs.microsoft.com/en-us/learn/modules/deploy-vms-from-vhd-templates/4-exercise-create-image-provision-vm?pivots=windows-cloud
 
 #Publish a port
+dotnet run
 
+#Edit the welcome page
 
 # Jaap's script - @Jaap_Brasser
 
