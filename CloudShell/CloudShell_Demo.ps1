@@ -9,6 +9,7 @@ $PSVersionTable
 #Azure Drive based on Ships provider
 cd './Visual Studio Ultimate with MSDN/'
 cd cd ./ResourceGroups/
+Get-AzVM
 
 get-clouddrive
 
@@ -50,12 +51,12 @@ Set-PSReadLineOption -AddToHistoryHandler {
 
 # PowerShell 7 - Beta in Cloud Shell
 $PSVersionTable
-iwr -uri 'https://github.com/PowerShell/PowerShell/releases/download/v7.0.0-preview.3/powershell-7.0.0-preview.3-linux-x64.tar.gz' -OutFile 'ps.tar.gz'
+iwr -uri 'https://github.com/PowerShell/PowerShell/releases/download/v7.0.0-preview.4/powershell-7.0.0-preview.4-linux-x64.tar.gz' -OutFile 'ps.tar.gz'
 tar -xvzf ps.tar.gz
 ./pwsh
 $psversiontable
 
-# Managing a VM with PowerShell direct
+# Managing Azure VM's with PowerShell
 get-command -module PSCloudShellUtility
 
 $cred = Get-Credential
@@ -67,8 +68,6 @@ Enable-AzVMPSRemoting -Name PSConfwin -ResourceGroupName PSConfAsia -OsType Wind
 Enable-AzVMPSRemoting -Name PSConflinux -ResourceGroupName PSConfAsia -OsType Linux -Protocol SSH
 
 
-Enter-AzVM
-
 #Other editors - vi, vim, nano, emacs
 gcm nano, vi, vim, emacs
 
@@ -79,6 +78,9 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-pow
 https://docs.microsoft.com/en-us/learn/modules/deploy-vms-from-vhd-templates/4-exercise-create-image-provision-vm?pivots=windows-cloud
 
 #Publish a port
+md webapp
+cd webapp
+dotnet new mvc
 dotnet run
 
 #Edit the welcome page
