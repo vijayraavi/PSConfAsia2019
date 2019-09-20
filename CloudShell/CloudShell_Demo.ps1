@@ -59,7 +59,7 @@ $psversiontable
 # Managing Azure VM's with PowerShell
 get-command -module PSCloudShellUtility
 
-$cred = Get-Credential
+#$cred = Get-Credential (loaded this in profile to save typing)
 
 Invoke-AzVMCommand -Name psconfwin -ResourceGroupName PSConfAsia -scriptblock {gcim win32_operatingsystem | fl *} -Credential $cred
 
