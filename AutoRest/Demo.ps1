@@ -56,7 +56,7 @@ Start-Process (Get-XkcdComic -comicid 327).img
 # We use swashbuckle to automtically generate our openapi spec and create a gui
 # https://github.com/domaindrivendev/Swashbuckle.AspNetCore
 
-cd C:\repos\Summit2019_muzz\Glue_Demo
+Set-Location C:\repos\Summit2019_muzz\Glue_Demo
 Start-Process http://localhost:50436/swagger/index.html
 
 #Invoke-WebRequest -uri http://localhost:50436/swagger/v1/swagger.json -OutFile swagger.json -UseDefaultCredentials -AllowUnencryptedAuthentication
@@ -87,7 +87,7 @@ $env:NegotiateAuth = ''
 
 # Autorest by default looks for readme.md
 # Open readme.md
-git clean -fxd
+Set-Location C:\repos\Summit2019_muzz\Glue_Azure
 
 autorest
 
@@ -97,7 +97,7 @@ connect-glue -Path C:\Users\AdamMurray\glue_client_secret.xml
 .\generated\generate-help.ps1
 
 # Tag version of autorest extension
-autorest-beta --powershell --input-file:./swagger.json --clear-output-folder --namespace:Glue.Api --use=@microsoft.azure/autorest.powershell@2.0.370
+autorest-beta --powershell --input-file:./swagger.json --clear-output-folder --namespace:Glue.Api --use=autorest.powershell@2.0.370
 
 # Produce SDK for another language
 
