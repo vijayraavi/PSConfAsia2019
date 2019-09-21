@@ -1,4 +1,4 @@
-Set-Location cd C:\repos\PSConfAsia2019\AutoRest\xkcd
+Set-Location C:\repos\PSConfAsia2019\AutoRest\xkcd
 
 ## Requirements
 #  Use of the beta version of autorest.powershell requires the following:
@@ -35,6 +35,8 @@ Get-XkcdComic | Format-List *
 ([system.appdomain]::CurrentDomain.GetAssemblies() | Where-Object location -like '*xkcd*').gettypes()
 (([system.appdomain]::CurrentDomain.GetAssemblies() | Where-Object location -like '*xkcd*').gettypes() | Where-Object name -eq 'comic').getmembers() | Format-Table name, membertype
 
+
+.\generated\build-module.ps1 -run -code
 
 #Update nuspec
 .\generated\pack-module.ps1
