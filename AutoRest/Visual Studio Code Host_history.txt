@@ -2,8 +2,8 @@ c:\repos\summit2019\src\ResetDemo.ps1
 Set-Location C:\repos\Summit2019\src\xkcd
 Invoke-RestMethod http://xkcd.com/info.0.json
 Invoke-RestMethod http://xkcd.com/327/info.0.json
-autorest --help
-autorest --powershell --input-file:./xkcd.yaml --clear-output-folder
+autorest-beta --help
+autorest-beta --powershell --input-file:./xkcd.yaml --clear-output-folder
 .\generated\build-module.ps1 -run
 Get-command -module xkcd
 Get-XkcdComic | Format-List *
@@ -19,7 +19,7 @@ find-module -Repository PSSummit2019 -Credential $cred xkcd | install-module -Cr
 cd C:\repos\Summit2019_muzz\Glue_Demo
 Start-Process http://localhost:50436/swagger/index.html
 $env:NegotiateAuth = $true
-autorest --powershell --input-file:./swagger.json --clear-output-folder --namespace:Glue.Api
+autorest--beta --powershell --input-file:./swagger.json --clear-output-folder --namespace:Glue.Api
 .\generated\build-module.ps1 -run
 get-addomain
 $env:NegotiateAuth = ''
